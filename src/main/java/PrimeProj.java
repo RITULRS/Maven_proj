@@ -13,8 +13,8 @@ public class PrimeProj {
         System.out.println("Enter a number");
         int num = sc.nextInt();
 
-        for(int i = 1; i <= num; i++){
-            if(i == 1 || i == 2) {
+        for(int i = 2; i <= num; i++){
+            if(i == 2) {
                 System.out.println(i);
             }
             else if(isPrime(i))
