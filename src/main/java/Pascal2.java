@@ -8,10 +8,10 @@ public class Pascal2 {
             for (int space = 0; space <= n - row; space++) {
                 System.out.print(" ");
             }
-            int C = 1;
+            int val = 1;
             for (int i = 1; i <= row; i++) {
-                System.out.print(C + " ");
-                C = C * (row - i) / i;
+                System.out.print(val + " ");
+                val = val * (row - i) / i;
             }
             System.out.println();
         }
