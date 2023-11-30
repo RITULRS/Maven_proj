@@ -12,6 +12,6 @@ public class BinToDec {
             j++;
          }
         System.out.println(res);
-        
+
     }
 }

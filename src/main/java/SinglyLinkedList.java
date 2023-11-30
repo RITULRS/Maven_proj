@@ -9,7 +9,8 @@ class Node{
     }
  }
 public class SinglyLinkedList {
-   public static Node insert(Node start,int data){
+   //public static Node start;
+    public static Node insert(Node start,int data){
         if(start == null) {
             start = new Node(data);
             return start;
@@ -22,7 +23,20 @@ public class SinglyLinkedList {
         temp.next = new Node(data);
         return start;
     }
+    public static Node insertLIFO(Node start,int data){
+       Node temp = new Node(data);
+       temp.next = null;
+
+       if(start == null) {
+           start = temp;
+          return start;
+       }
+       temp.next = start;
+       start = temp;
+       return start;
+    }
     public static void display(Node start){
+        System.out.println("display");
         while(start != null){
             System.out.print(start.data+" ");
             start = start.next;
@@ -33,11 +47,12 @@ public class SinglyLinkedList {
           Scanner sc = new Scanner(System.in);
         System.out.println("Enter no. of nodes u want to add");
           int no = sc.nextInt();
-          Node start = null;
+         Node start = null;
           while(no > 0){
               System.out.println("Enter value to add");
               int value = sc.nextInt();
-              start =  insert(start,value);
+              //start = insert(start,value);
+              start = insertLIFO(start,value);
               no--;
           }
           display(start);
